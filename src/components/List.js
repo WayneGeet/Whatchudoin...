@@ -1,17 +1,18 @@
 import ListItems from "./ListItems";
+import { v4 as uuid } from 'uuid';
 import {DragDropContext, Droppable, Draggable} from "react-beautiful-dnd";
 const List = ({todos, setFilter, onToggle, onDragEnd, setList}) => {
-    
+    const droppableId = uuid()
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-        <Droppable droppableId="droppable" >
+        <Droppable droppableId={droppableId} >
             {(provided)=>(
             <ul ref={provided.innerRef} {...provided.droppableProps}
             className="bg-[--dark-blue] rounded-lg">
                 {todos.map((todo, index)=>{
                     return(
                         <Draggable
-                        draggableId={todo.todo}
+                        draggableId={todo.id.toString()}
                         index={index}
                         key={todo.id}>
                             {(provided, snapshot) => (
