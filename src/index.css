@@ -1,13 +1,58 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============General Styling=========== */
+:root{
+  --clr-pry:hsl(220, 98%, 61%);
+  --clr-accent:linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+  --fw-pry:400;
+  --fw-sec:700;
+  --dark-blue:hsl(235, 24%, 19%);
+  --dark-blue-gray:hsl(234, 11%, 52%);
+  --light-blue:hsl(234, 39%, 85%);
+  --very-dark:hsl(235, 21%, 11%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* We'll work on the rest as we code */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Josefin Sans', sans-serif;
 }
+
+body {
+  scroll-behavior:smooth;
+  background-color:var(--very-dark);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+.container{
+  margin-inline:auto;
+  position:relative;
+}
+
+.header{
+  background:url("./images/bg-mobile-dark.jpg");
+  background-size:cover;
+  background-position:center center;
+  width:100%;
+  height:30vh;
+}
+
+.track{
+  letter-spacing:1.4rem;
+}
+
+@media screen and (min-width:620px){
+  body{
+  }
+  .header{
+    background:url("./images/bg-desktop-dark.jpg");
+    
+  }
+}
+
+
